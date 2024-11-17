@@ -12,8 +12,7 @@ import withReactContent from 'sweetalert2-react-content'
 import MovieDetails from './components/MovieDetails';
 import WatchedMovieList from './components/WatchedMovieList';
 
-
-const apiKey = "8ba7e4f";
+// const apiKey = process.env.REACT_APP_OMDB_API_KEY;
 
 /* eslint-disable*/
 const MySwal = withReactContent(Swal);
@@ -63,7 +62,7 @@ function App() {
         setIsLoading(true);
         setError("");
 
-        const result = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${query || "spider"}`, 
+        const result = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${"8ba7e4f"}&s=${query || "spider"}`, 
           { signal: controller.signal });
 
         const data = await result.json();

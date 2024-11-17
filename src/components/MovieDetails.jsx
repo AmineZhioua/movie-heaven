@@ -3,7 +3,7 @@ import StarRating from './StarRating';
 
 
 
-const apiKey = "8ba7e4f";
+// const apiKey = process.env.REACT_APP_OMDB_API_KEY;
 
 function MovieDetails({ selectedId, onCloseMovie, onSetWatched, watched }) {
     // Loading State
@@ -23,7 +23,7 @@ function MovieDetails({ selectedId, onCloseMovie, onSetWatched, watched }) {
             try {
                 setIsLoading(true);
                 setError(null);
-                const result = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${selectedId}`);
+                const result = await fetch(`http://www.omdbapi.com/?apikey=${"8ba7e4f"}&i=${selectedId}`);
                 const movieData = await result.json();
 
                 if (movieData.Response === "False") {
